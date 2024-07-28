@@ -213,22 +213,23 @@ const styles = StyleSheet.create({
   },
   chatContainer: {
     flex: 1,
-    marginTop: 40,
+    marginTop: 60,
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     borderTopWidth: 1,
     borderTopColor: '#ccc',
-    padding: 8
+    padding: 10,
+    height: 80,
   },
   input: {
     flex: 1,
-    height: 40,
+    height: 50,
     borderColor: '#028CFD', // 입력창 테두리 색 변경
     borderWidth: 2,
     borderRadius: 10,
-    paddingHorizontal: 10,
+    paddingHorizontal: 14,
     marginRight: 10,
     fontFamily: 'NanumSquareR',
   },
@@ -244,14 +245,14 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   avatar: {
-    width: 40,
-    height: 40,
+    width: 60,
+    height: 60,
     borderRadius: 20,
   },
   userMessage: {
     backgroundColor: '#A3D8FF', // 하늘색
     borderRadius: 20,
-    padding: 14,
+    padding: 18,
     marginVertical: 5,
     maxWidth: '70%',
     marginLeft: 10,
@@ -259,27 +260,32 @@ const styles = StyleSheet.create({
   botMessage: {
     backgroundColor: '#EDEDED', // 회색
     borderRadius: 20,
-    padding: 14,
+    padding: 18,
     marginVertical: 5,
     maxWidth: '70%',
     marginRight: 10,
     marginLeft: 12,
   },
   userText: {
-    color: '#000',
-    fontFamily: 'NanumSquareB',
+    color: 'black',
+    fontSize: 18,
+    fontFamily: 'NanumSquareEB',
   },
   botText: {
-    color: '#000',
-    fontFamily: 'NanumSquareB',
+    color: 'black',
+    fontSize: 18,
+    fontFamily: 'NanumSquareEB',
   },
   sendButton: {
     backgroundColor: '#028CFD', // 보내기 버튼 색상 변경
     padding: 10,
     borderRadius: 10,
+    height: 44,
   },
   sendButtonText: {
-    color: '#fff',
+    color: 'white',
+    fontSize: 16,
+    marginTop: 4,
     fontFamily: 'NanumSquareB',
   }
 });
