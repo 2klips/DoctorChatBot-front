@@ -135,11 +135,12 @@ import { View, Text, TextInput, FlatList, StyleSheet, Image, TouchableOpacity } 
 
 const Chatting = () => {
   const [messages, setMessages] = useState([
-    { id: '1', sender: 'bot', text: '헬로 챗봇 월드' },
+    { id: '1', sender: 'bot', text: '안녕하세요! 어디가 불편하신가요?' },
+    // { id: '1', sender: 'bot', text: '헬로 챗봇 월드' },
     { id: '2', sender: 'user', text: '간이 아파' },
-    { id: '3', sender: 'bot', text: '우루사' },
-    { id: '4', sender: 'user', text: 'ㅋㅋㅋㅋㅋㅋㅋ' },
-    { id: '5', sender: 'bot', text: '지금부터 채팅 시작' }
+    // { id: '3', sender: 'bot', text: '우루사' },
+    // { id: '4', sender: 'user', text: 'ㅋㅋㅋㅋㅋㅋㅋ' },
+    // { id: '5', sender: 'bot', text: '지금부터 채팅 시작' }
   ]);
   const [input, setInput] = useState('');
 
@@ -208,26 +209,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#f5f5f5'
+    backgroundColor: 'white'
   },
   chatContainer: {
     flex: 1,
+    marginTop: 40,
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     borderTopWidth: 1,
     borderTopColor: '#ccc',
-    padding: 5
+    padding: 8
   },
   input: {
     flex: 1,
     height: 40,
     borderColor: '#028CFD', // 입력창 테두리 색 변경
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
     paddingHorizontal: 10,
-    marginRight: 10
+    marginRight: 10,
+    fontFamily: 'NanumSquareR',
   },
   messageContainer: {
     flexDirection: 'row',
@@ -248,7 +251,7 @@ const styles = StyleSheet.create({
   userMessage: {
     backgroundColor: '#A3D8FF', // 하늘색
     borderRadius: 20,
-    padding: 10,
+    padding: 14,
     marginVertical: 5,
     maxWidth: '70%',
     marginLeft: 10,
@@ -256,16 +259,19 @@ const styles = StyleSheet.create({
   botMessage: {
     backgroundColor: '#EDEDED', // 회색
     borderRadius: 20,
-    padding: 10,
+    padding: 14,
     marginVertical: 5,
     maxWidth: '70%',
     marginRight: 10,
+    marginLeft: 12,
   },
   userText: {
     color: '#000',
+    fontFamily: 'NanumSquareB',
   },
   botText: {
     color: '#000',
+    fontFamily: 'NanumSquareB',
   },
   sendButton: {
     backgroundColor: '#028CFD', // 보내기 버튼 색상 변경
@@ -274,7 +280,7 @@ const styles = StyleSheet.create({
   },
   sendButtonText: {
     color: '#fff',
-    fontWeight: 'bold',
+    fontFamily: 'NanumSquareB',
   }
 });
 
