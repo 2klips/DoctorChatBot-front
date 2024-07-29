@@ -1,4 +1,7 @@
 import { Stack } from "expo-router";
+import IntroScreen from "./IntroScreen";
+import Index from "./index";
+import Chatting from "./Chatting";
 
 export default function RootLayout() {
   return (
