@@ -87,8 +87,10 @@ import { View, Text, TextInput, FlatList, StyleSheet, Image, TouchableOpacity } 
 const Chatting = () => {
   const [messages, setMessages] = useState([
     { id: '1', sender: 'bot', text: '안녕하세요! 어디가 불편하신가요?', animated: true },
-    { id: '2', sender: 'bot', text: '으아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅁㄴㅇㅁㄴㅇㅁㅇㅁㅇㅁㄴㅇㄴㅁㅇㄴㅁㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅈㅁ덜호저ㅑㄷㄹ햐ㅕㅁㅈㄷㅎ려ㅑㅇㅁㅎㄴ러ㅏㅁㅈㄷ혀럄ㅇㅎ넗ㅁㅈ뎌ㅑㅀㅁㅇ널햗멿먀녀ㅣㄹ혀ㅑㄴㄷㅎ랴ㅕㅣㄴㄷㅎ랴ㅕㅁㄶ랴ㅕㄶ랴ㅕㄴㄷㅎ려ㅑㄴㅁㅎ댜ㅕ하기싫어 하기싫어어어어어어ㅓ어어엉ㅏㅏㅏㅏ', animated: true },
-    { id: '3', sender: 'user', text: '으아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅁㄴㅇㅁㄴㅇㅁㅇㅁㅇㅁㄴㅇㄴㅁㅇㄴㅁㅇㅁㄴㅇㄴㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅈㅁ덜호저ㅑㄷㄹ햐ㅕㅁㅈㄷㅎ려ㅑㅇㅁㅎㄴ러ㅏㅁㅈㄷ혀럄ㅇㅎ넗ㅁㅈ뎌ㅑㅀㅁㅇ널햗멿먀녀ㅣㄹ혀ㅑㄴㄷㅎ랴ㅕㅣㄴㄷㅎ랴ㅕㅁㄶ랴ㅕㄶ랴ㅕㄴㄷㅎ려ㅑㄴㅁㅎ댜ㅕ하기싫어 하기싫어어어어어어ㅓ어어엉ㅏㅏㅏㅏ', animated: true },
+    { id: '2', sender: 'user', text: '지난 금요일에 발목을 삐끗했어요. 발이 부어있다가 지금은 멍까지 생겼어요.', animated: true },
+    { id: '3', sender: 'bot', text: '발목을 비틀어서 다친 것 같네요. 발의 뼈에 염증이나 손상이 있을 수 있으니까, 가까운 정형외과 전문의를 찾아 상담해주세요.', animated: true },
+    { id: '4', sender: 'user', text: '어떻게 대처해야 할까요?', animated: true },
+    { id: '5', sender: 'bot', text: '우선, 휴식을 취하고 발을 쉬게 해야 합니다. 무릎 아래에 깁스를 끼우는 것도 고려해볼 만합니다. 또한, 얼음으로 냉찜질을 하고 발을 압박 밴드로 감싸서 부어오름을 줄일 수 있습니다. 발을 높이 업고 휴식을 취하는 것이 중요합니다.', animated: true },
 
   ]);
   const [input, setInput] = useState('');
@@ -165,8 +167,8 @@ const Chatting = () => {
         setMessages([{ id: '1', sender: 'bot', text: '안녕하세요! 어디가 불편하신가요?', animated: true }]);
         setDisplayMessages([{ id: '1', sender: 'bot', text: '안녕하세요! 어디가 불편하신가요?', animated: true }]);
       }}>
-          <Text style={styles.resetButtonText}>초기화</Text>
-        </TouchableOpacity>
+          <Image source={require('../assets/images/reload.png')} style={styles.reload} />
+      </TouchableOpacity>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -266,7 +268,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 4,
     fontFamily: 'NanumSquareB',
-  }
+  },
+  reload: {
+    width: 40,
+    height: 40,
+    alignSelf: 'center',
+  },
+  resetButton: {
+    position: 'absolute', 
+    top: 20, 
+    right: 20, 
+  },
 });
 
 export default Chatting;
