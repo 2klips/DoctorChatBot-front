@@ -1,50 +1,20 @@
-# Welcome to your Expo app 👋
+# 의사소통 프로젝트
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# 모델 선정 기준
 
-## Get started
+1. **대규모 파라미터 수:**
 
-1. Install dependencies
+   5.8억 개의 파라미터를 가지고 있어, 다양한 의료 데이터에 대해 높은 성능을 보일 수 있습니다.
 
-   ```bash
-   npm install
-   ```
+3. **의료 특화:**
 
-2. Start the app
+   의료 문서, 논문, 임상 기록 등의 데이터를 학습해 의료 분야에 특화되어 있어 전문적인 의료 상담이나 정보 제공에 적합합니다.
+   
+4. **한국어 최적화:**
 
-   ```bash
-    npx expo start
-   ```
+   한국어 데이터로 학습되었기 때문에, 한국어 텍스트 처리에 강점을 보입니다.
 
-In the output, you'll find options to open the app in a
+5. **고품질 데이터 학습:**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+   MedText와 ChatDoctor 데이터셋을 GPT3.5를 통해 한국어 대화로 변환시켜 학습되었습니다.
+   이는 모델의 답변 정확도와 신뢰성을 높이는 데 기여합니다.
