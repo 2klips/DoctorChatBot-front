@@ -12,7 +12,7 @@ const Chatting = () => {
       setMessages([...messages, newMessage]);
       setInput('');
       try {
-        const res = await fetch("http://192.168.56.1:8000/generate", {
+        const res = await fetch("http://192.168.45.54:8000/generate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -76,7 +76,8 @@ const Chatting = () => {
         setMessages([{ id: '1', sender: 'bot', text: '안녕하세요! 어디가 불편하신가요?', animated: true }]);
         setDisplayMessages([{ id: '1', sender: 'bot', text: '안녕하세요! 어디가 불편하신가요?', animated: true }]);
       }}>
-        <Text style={styles.resetButtonText}>초기화</Text>
+        {/* <Text style={styles.resetButtonText}>초기화</Text> */}
+        <Image source={require('../assets/images/reload.png')} style={styles.reload} />
       </TouchableOpacity>
       <View style={styles.inputContainer}>
         <TextInput
@@ -177,18 +178,19 @@ const styles = StyleSheet.create({
     fontFamily: 'NanumSquareB',
   },
   resetButton: {
-    backgroundColor: '#FF6347',
-    padding: 10,
-    borderRadius: 10,
-    height: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 10,
+    position: 'absolute',
+    top: 30,
+    right: 20,
   },
-  resetButtonText: {
-    color: 'white',
-    fontSize: 16,
-    fontFamily: 'NanumSquareB',
+  // resetButtonText: {
+  //   color: 'white',
+  //   fontSize: 16,
+  //   fontFamily: 'NanumSquareB',
+  // },
+  reload: {
+    width: 40,
+    height: 40,
+    alignSelf: 'center',
   },
 });
 export default Chatting;
