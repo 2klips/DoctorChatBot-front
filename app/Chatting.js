@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { View, Text, TextInput, FlatList, StyleSheet, Image, TouchableOpacity } from 'react-native';
 const Chatting = () => {
+  const flatListRef = useRef();
   const [messages, setMessages] = useState([
     { id: '1', sender: 'bot', text: '안녕하세요! 어디가 불편하신가요?', animated: true },
   ]);
   const [input, setInput] = useState('');
   const [displayMessages, setDisplayMessages] = useState([...messages]);
+
+  useEffect(() => {
+    // 메시지가 변경되면 스크롤을 맨 아래로 내립니다.
+    flatListRef.current?.scrollToEnd({ animated: false });
+  }, [displayMessages]);
+
   const sendMessage = async () => {
     if (input.trim()) {
       const newMessage = { id: (messages.length + 1).toString(), sender: 'user', text: input, animated: false };
       setMessages([...messages, newMessage]);
       setInput('');
       try {
-        const res = await fetch("http://192.168.45.54:8000/generate", {
+        const res = await fetch("http://180.228.71.87:55555/generate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -67,6 +74,7 @@ const Chatting = () => {
   return (
     <View style={styles.container}>
       <FlatList
+        ref={flatListRef}
         data={displayMessages}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
