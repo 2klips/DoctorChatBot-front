@@ -19,7 +19,7 @@ const Chatting = () => {
       setMessages([...messages, newMessage]);
       setInput('');
       try {
-        const res = await fetch("http://180.228.71.87:55555/generate", {
+        const res = await fetch("{URL}/generate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
